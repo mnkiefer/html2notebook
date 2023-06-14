@@ -1,0 +1,14 @@
+{
+  "name": "html2notebook",
+  "version": "1.0.0",
+  "author": "Mara Kiefer",
+  "license": "MIT",
+  "description": "Convert static HTML files to notebooks",
+  "main": "lib/index.js",
+  "type": "module",
+  "dependencies": {
+    "htmlparser2": "^9.0.0"
+  },
+  "scripts": {
+  }
+}
