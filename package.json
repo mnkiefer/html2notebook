@@ -6,6 +6,9 @@
   "description": "Convert static HTML files to notebooks",
   "main": "lib/index.js",
   "type": "module",
+  "files": [
+    "./lib"
+  ],
   "dependencies": {
     "htmlparser2": "^9.0.0"
   },
