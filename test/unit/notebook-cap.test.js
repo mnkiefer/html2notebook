@@ -8,7 +8,7 @@ const dataDir = path.join(__dirname, '../data');
 describe('Testing templates', () => {
 
   test(`Testing "cap"`, () => {
-    expect(Object.keys(templates)).toEqual(["capTemplate"]);
+    expect(Object.keys(templates)).toEqual(["capTemplate", "jupyterTemplate"]);
   });
 
 });
