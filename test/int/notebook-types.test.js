@@ -4,41 +4,44 @@ const path = require('path');
 const { html2notebook } = require('../../lib/index');
 
 const dataDir = path.join(__dirname, '../data');
-const readFile = (file) => fs.readFileSync(file, 'utf8');
+const tmpDir = path.join(dataDir, 'tmp');
+const parseNotebook = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 
 describe('Convert "${inputFile}"', () => {
   let inputFile = path.join(dataDir, 'text-with-code.html');
-  let outputFile, outputFileExp;
 
-  afterEach(() => {
-    if (fs.existsSync(outputFile)) {
-      //fs.unlinkSync(outputFile);
+  beforeEach(() => {
+    if (!fs.existsSync(tmpDir)) {
+      fs.mkdirSync(tmpDir);
     }
   })
 
-  outputFile = path.join(dataDir, 'text-with-code.capnb');
-  outputFileExp = path.join(dataDir, 'text-with-code-exp.capnb');
+  afterEach(() => {
+    if (fs.existsSync(tmpDir)) {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  })
+
   test(`Missing input file`, () => {
-    readFile(inputFile);
-    const config = { type: 'cap', outputFile };
+    const config = { type: 'cap' };
     expect(() => { html2notebook(config) })
       .toThrow('ERROR: Missing HTML input file. Nothing to convert.');
   });
 
   test(`Valid "cap" config`, () => {
-    readFile(inputFile);
+    const outputFile = path.join(tmpDir, 'text-with-code.capnb');
+    const outputFileExp = path.join(dataDir, 'text-with-code-exp.capnb');
     const config = { type: 'cap', inputFile, outputFile };
     html2notebook(config);
-    expect(readFile(outputFile)).toEqual(readFile(outputFileExp));
+    expect(parseNotebook(outputFile)).toMatchObject(parseNotebook(outputFileExp));
   });
 
-  outputFile = path.join(dataDir, 'text-with-code.ipynb');
-  outputFileExp = path.join(dataDir, 'text-with-code-exp.ipynb');
   test(`Valid "jupyter" config`, () => {
-    readFile(inputFile);
+    const outputFile = path.join(tmpDir, 'text-with-code.ipynb');
+    const outputFileExp = path.join(dataDir, 'text-with-code-exp.ipynb');
     const config = { type: 'jupyter', inputFile, outputFile };
     html2notebook(config);
-    expect(readFile(outputFile)).toEqual(readFile(outputFileExp));
+    expect(parseNotebook(outputFile)).toMatchObject(parseNotebook(outputFileExp));
   });
 
 });

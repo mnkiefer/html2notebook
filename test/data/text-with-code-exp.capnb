@@ -1,6 +1,6 @@
 [
     {
-        "value": "<style></style>\n\n<html><div class=\"n1\"><div class=\"n2\">TEXT N2\n        <div class=\"n4\"><div class=\"n10\"></div></div></div></div></html>",
+        "value": "<html><div class=\"n1\"><div class=\"n2\">TEXT N2\n        <div class=\"n4\"><div class=\"n10\"></div></div></div></div></html>",
         "kind": 1,
         "language": "markdown"
     },
@@ -10,7 +10,7 @@
         "language": "shell"
     },
     {
-        "value": "<style></style>\n\n<html><div class=\"n1\"><div class=\"n2\"><div class=\"n6\">TEXT N6</div></div><div class=\"n3\"><div class=\"n7\"></div><div class=\"n8\">TEXT N8</div></div></div></html>",
+        "value": "<html><div class=\"n1\"><div class=\"n2\"><div class=\"n6\">TEXT N6</div></div><div class=\"n3\"><div class=\"n7\"></div><div class=\"n8\">TEXT N8</div></div></div></html>",
         "kind": 1,
         "language": "markdown"
     },
@@ -20,7 +20,7 @@
         "language": "shell"
     },
     {
-        "value": "<style></style>\n\n<html><div class=\"n1\"><div class=\"n3\"></div></div></html>",
+        "value": "<html><div class=\"n1\"><div class=\"n3\"></div></div></html>",
         "kind": 1,
         "language": "markdown"
     }
