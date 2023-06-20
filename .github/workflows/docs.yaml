@@ -4,7 +4,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-    paths: ["docs/**"]
+    paths: ["docs/**", ".github/workflows/docs.yaml"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,6 +36,8 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run docs:build
+        env:
+          GH_BASE: /
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
