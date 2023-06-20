@@ -5,5 +5,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
-## Version 1.0.0
-- Initial code base
+## Version 1.0.0 - 2023-06-20
+- Initialize code base
