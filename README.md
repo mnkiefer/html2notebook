@@ -9,3 +9,5 @@ It can be a wonderful addition to a website's build pipeline, as it enables you 
 |:---:|:---:|:---:|
 | CAP Notebooks | capnb | ✓ |
 | Jupyter | ipynb | ✓ |
+
+Please visit the [html2notebook documentation](https://mnkiefer.github.io/html2notebook/) to find out more.
