@@ -6,6 +6,6 @@ It can be a wonderful addition to a website's build pipeline, as it enables you 
 
 ## Supported Notebook formats
 | Notebook | Extension | Supported |
-|---|---|---|
+|:---:|:---:|:---:|
 | CAP Notebooks | capnb | ✓ |
 | Jupyter | ipynb | ✓ |
