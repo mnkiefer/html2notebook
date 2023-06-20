@@ -1,11 +1,12 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
+const siteHostName = process.env.SITE_HOSTNAME || 'http://localhost:3000'
+const sitemapLinks = []
+
 export default defineConfig({
   title: "html2notebook",
   description: "html2notebook Home",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: 'about' },
@@ -25,7 +26,11 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/mnkiefer/html2notebook' }
     ]
+  },
+  buildEnd: async ({ outDir, site }) => {
+    await redirects.generate(outDir, site.base, redirectLinks)
+    await sitemap.generate(outDir, site.base, siteHostName, sitemapLinks)
   }
 })
