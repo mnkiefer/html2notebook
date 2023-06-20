@@ -34,13 +34,12 @@ jobs:
           node-version: 18.x
           cache: 'npm'
       - run: npm ci
-      - run: npm test
       - run: npm run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
-          path: docs/.vitepress/dist
+          path: .vitepress/dist
 
   # Deployment job
   deploy:
