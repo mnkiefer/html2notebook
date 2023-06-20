@@ -1,8 +1,5 @@
 import { defineConfig } from 'vitepress'
 
-const siteHostName = process.env.SITE_HOSTNAME || 'http://localhost:3000'
-const sitemapLinks = []
-
 export default defineConfig({
   title: "html2notebook",
   description: "html2notebook Home",
@@ -28,9 +25,5 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/mnkiefer/html2notebook' }
     ]
-  },
-  buildEnd: async ({ outDir, site }) => {
-    await redirects.generate(outDir, site.base, redirectLinks)
-    await sitemap.generate(outDir, site.base, siteHostName, sitemapLinks)
   }
 })
