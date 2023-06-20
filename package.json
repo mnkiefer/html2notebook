@@ -6,9 +6,11 @@
   "description": "Convert static HTML files to notebooks",
   "main": "lib/index.js",
   "files": [
-    "./lib"
+    "lib/",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
   ],
-  "types": "lib/types.d.js",
   "jest": {
     "projects": [
       "test/jest.unit.config.js",
