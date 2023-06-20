@@ -3,6 +3,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "html2notebook",
   description: "html2notebook Home",
+  
+  base: '/html2notebook/',
+
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
