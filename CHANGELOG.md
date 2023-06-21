@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 - Start a new cell if cell type has changed and on every code cell
+- Allow text cells matching only whitespace characters to be appended
 
 ### Removed
 - Removed dependencies `typescript`, `typedoc`
