@@ -9,10 +9,10 @@ hero:
     - theme: brand
       text: Setup
       link: /setup
-    - theme: alt
+    - theme: brand
       text: Examples
       link: /examples
-    - theme: alt
+    - theme: brand
       text: API Reference
       link: /api
 

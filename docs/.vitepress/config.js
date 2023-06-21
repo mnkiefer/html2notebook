@@ -12,18 +12,18 @@ export default defineConfig({
       { text: 'About', link: 'about' },
       { text: 'Setup', link: 'setup' },
       { text: 'Examples', link: '/examples' },
-      { text: 'API', link: '/api' }
+      { text: 'API Reference', link: '/api' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Simple example', link: '/examples-simple' },
-          { text: 'Advanced example', link: '/examples-advanced' }
-        ]
-      }
-    ],
+    // sidebar: [
+    //   {
+    //     text: 'Examples',
+    //     items: [
+    //       { text: 'Simple example', link: '/examples-simple' },
+    //       { text: 'Advanced example', link: '/examples-advanced' }
+    //     ]
+    //   }
+    // ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/mnkiefer/html2notebook' }
