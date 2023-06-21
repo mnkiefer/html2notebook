@@ -36,7 +36,6 @@ describe('Convert "${inputFile}"', () => {
   });
 
   test(`Valid "cap" config with styles`, () => {
-    const outputFile = path.join(tmpDir, 'styled-text-with-code.capnb');
     const outputFileExp = path.join(dataDir, 'styled-text-with-code.capnb');
     const config = { type: 'cap', inputFile, styles: `* { font-weight: bold; }` };
     const notebook = html2notebook(config);

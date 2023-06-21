@@ -1,6 +1,6 @@
 [
     {
-        "value": "<style>\n* { font-weight: bold; }\n</style>\n\n<html><div class=\"n1\"><div class=\"n2\">TEXT N2\n        <div class=\"n4\"><div class=\"n10\"></div></div></div></div></html>",
+        "value": "<style>\n* { font-weight: bold; }\n</style>\n\n<html>\n<div class=\"n1\">\n    <div class=\"n2\">TEXT N2\n        <div class=\"n4\">\n            <div class=\"n10\"></div>\n        </div>\n        </div></div></html>",
         "language": "markdown",
         "kind": 1
     },
@@ -10,7 +10,7 @@
         "kind": 2
     },
     {
-        "value": "<style>\n* { font-weight: bold; }\n</style>\n\n<html><div class=\"n1\"><div class=\"n2\"><div class=\"n6\">TEXT N6</div></div><div class=\"n3\"><div class=\"n7\"></div><div class=\"n8\">TEXT N8</div></div></div></html>",
+        "value": "<style>\n* { font-weight: bold; }\n</style>\n\n<html><div class=\"n1\"><div class=\"n2\">\n        <div class=\"n6\">TEXT N6</div>\n    </div>\n    <div class=\"n3\">\n        <div class=\"n7\"></div>\n        <div class=\"n8\">TEXT N8</div>\n        </div></div></html>",
         "language": "markdown",
         "kind": 1
     },
@@ -20,7 +20,7 @@
         "kind": 2
     },
     {
-        "value": "<style>\n* { font-weight: bold; }\n</style>\n\n<html><div class=\"n1\"><div class=\"n3\"></div></div></html>",
+        "value": "<style>\n* { font-weight: bold; }\n</style>\n\n<html><div class=\"n1\"><div class=\"n3\">\n    </div>\n</div>\n</html>",
         "language": "markdown",
         "kind": 1
     }
