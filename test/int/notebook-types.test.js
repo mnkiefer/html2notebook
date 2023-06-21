@@ -29,14 +29,21 @@ describe('Convert "${inputFile}"', () => {
   });
 
   test(`Valid "cap" config`, () => {
-    const outputFile = path.join(tmpDir, 'text-with-code.capnb');
     const outputFileExp = path.join(dataDir, 'text-with-code-exp.capnb');
-    const config = { type: 'cap', inputFile, outputFile };
-    html2notebook(config);
-    expect(parseNotebook(outputFile)).toMatchObject(parseNotebook(outputFileExp));
+    const config = { type: 'cap', inputFile };
+    const notebook = html2notebook(config);
+    expect(notebook).toMatchObject(parseNotebook(outputFileExp));
   });
 
-  test(`Valid "jupyter" config`, () => {
+  test(`Valid "cap" config with styles`, () => {
+    const outputFile = path.join(tmpDir, 'styled-text-with-code.capnb');
+    const outputFileExp = path.join(dataDir, 'styled-text-with-code.capnb');
+    const config = { type: 'cap', inputFile, styles: `* { font-weight: bold; }` };
+    const notebook = html2notebook(config);
+    expect(notebook).toMatchObject(parseNotebook(outputFileExp));
+  });
+
+  test(`Valid "jupyter" config with output file`, () => {
     const outputFile = path.join(tmpDir, 'text-with-code.ipynb');
     const outputFileExp = path.join(dataDir, 'text-with-code-exp.ipynb');
     const config = { type: 'jupyter', inputFile, outputFile };
