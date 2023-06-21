@@ -2,12 +2,17 @@
 
 **html2notebook** is a conversion tool that let's you translate *HTML* to [notebooks](#supported-notebook-formats).
 
-It can be a wonderful addition to a website's build pipeline, as it enables you to serve interactive notebooks alongside of your content.
-
-## Supported Notebook formats
-| Notebook | Extension | Supported |
+| Notebook type | File extension | Supported |
 |:---:|:---:|:---:|
-| CAP Notebooks | capnb | ✓ |
-| Jupyter | ipynb | ✓ |
+| [CAP Notebook](https://cap.cloud.sap/docs/tools/#cap-vscode-notebook) | .capnb | ✓ |
+| [Jupyter Notebook](https://docs.jupyter.org/en/latest/#what-is-a-notebook) | .ipynb | ✓ |
 
-Please visit the [html2notebook documentation](https://mnkiefer.github.io/html2notebook/) to find out more.
+## Installation
+
+```sh
+npm install html2notebook
+```
+
+## Usage
+
+Please visit the [html2notebook documentation](https://mnkiefer.github.io/html2notebook/) for usage and examples.

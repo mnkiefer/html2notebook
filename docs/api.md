@@ -25,7 +25,7 @@ input configuration
 
 | Param | Type | Description |
 | --- | --- | --- |
-| userConfig | <code>\*</code> | Input configuration |
+| userConfig | <code>NotebookConfig</code> | Input configuration |
 
 <a name="data2notebook"></a>
 
@@ -38,8 +38,8 @@ and notebook data object received
 
 | Param | Type | Description |
 | --- | --- | --- |
-| userConfig | <code>\*</code> | Input configuration |
-| notebookData | <code>types.NotebookData</code> | Notebook data object |
+| userConfig | <code>NotebookConfig</code> | Input configuration |
+| notebookData | <code>NotebookData</code> | Notebook data object |
 
 <a name="html2notebook"></a>
 
@@ -50,5 +50,5 @@ Generates notebook based on user provided input configuration
 
 | Param | Type | Description |
 | --- | --- | --- |
-| userConfig | <code>\*</code> | Input configuration |
+| userConfig | <code>NotebookConfig</code> | Input configuration |
 
