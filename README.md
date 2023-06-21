@@ -2,10 +2,10 @@
 
 **html2notebook** is a conversion tool that let's you translate *HTML* to [notebooks](#supported-notebook-formats).
 
-| Notebook | File extension | Supported |
+| Notebook type | File extension | Supported |
 |:---:|:---:|:---:|
-| CAP Notebooks | .capnb | ✓ |
-| Jupyter | .ipynb | ✓ |
+| [CAP Notebook](https://cap.cloud.sap/docs/tools/#cap-vscode-notebook) | .capnb | ✓ |
+| [Jupyter Notebook](https://docs.jupyter.org/en/latest/#what-is-a-notebook) | .ipynb | ✓ |
 
 ## Installation
 
