@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## Version 1.0.1 - 2023-06-21
 
+### Fixed
+- Properly prepend user-defined styles to *text*-type notebook cells
+
 ### Removed
 - Removed dependencies `typescript`, `typedoc`
 
