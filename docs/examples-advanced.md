@@ -37,20 +37,25 @@ function in our configuration:
 
 ::: code-group
 ```js [build-notebooks.js]
-  const { html2notebook } = require('html2notebook');
+const { html2notebook } = require('html2notebook');
+const { DomUtils } = require('htmlparser2');
 
-  const myNotebook = html2notebook({
-    type: "cap",
-    inputFile: "PATH_TO_PROJECT/text-with-code.html",
-    getCodeCells: (node) => {
-        const regex = /language-(?<language>[a-z]+)/
-        const match = regex.exec(node?.attribs?.class);
-        return [{ text: node?.data, type: "code", language: match?.groups.language || '' }]
-    }
+const myNotebook = html2notebook({
+  type: "cap",
+  inputFile: "text-with-code.html",
+  getCodeCells: (node) => {
+      const regex = /language-(?<language>[a-z]+)/
+      const match = regex.exec(node?.attribs?.class);
+      const text = DomUtils.getElementsByTagType("text", node).map(n => {
+        if (n?.parent?.name === "code") {
+          return n?.data
+        }
+      })?.join('').trim() || '';
+      return [{ text, type: "code", language: match?.groups.language || '' }]
+   }
   });
 
   console.log(myNotebook)
-
   ```
   :::
 
@@ -58,22 +63,33 @@ function in our configuration:
   been defined in the tag classes:
 
 ```swift
-  [
+[
   {
-    value: '<html><div class="n1"><div class="n2">TEXT N2\n' +
-      '        <div class="n4"><div class="n10"></div></div></div></div></html>',
+    value: '<html>\n' +
+      '<div class="n1">\n' +
+      '    <div class="n2">TEXT N2\n' +
+      '        <div class="n4">\n' +
+      '            <div class="n10"></div>\n' +
+      '        </div>\n' +
+      '        </div></div></html>',
     language: 'markdown',
     kind: 1
   },
-  { value: '', language: 'sh', kind: 2 },
+  { value: 'echo "hello"', language: 'sh', kind: 2 },
   {
-    value: '<html><div class="n1"><div class="n2"><div class="n6">TEXT N6</div></div><div class="n3"><div class="n7"></div><div class="n8">TEXT N8</div></div></div></html>',
+    value: '<html><div class="n1"><div class="n2">\n' +
+      '        <div class="n6">TEXT N6</div>\n' +
+      '    </div>\n' +
+      '    <div class="n3">\n' +
+      '        <div class="n7"></div>\n' +
+      '        <div class="n8">TEXT N8</div>\n' +
+      '        </div></div></html>',
     language: 'markdown',
     kind: 1
   },
-  { value: '', language: 'cds', kind: 2 },
+  { value: 'entity cat { Name: String; }', language: 'cds', kind: 2 },
   {
-    value: '<html><div class="n1"><div class="n3"></div></div></html>',
+    value: '<html><div class="n1"><div class="n3">\n    </div>\n</div>\n</html>',
     language: 'markdown',
     kind: 1
   }
