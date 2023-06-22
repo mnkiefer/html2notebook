@@ -1,6 +1,6 @@
 {
   "name": "html2notebook",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Mara Nikola Kiefer",
   "license": "MIT",
   "description": "Convert static HTML files to notebooks",
