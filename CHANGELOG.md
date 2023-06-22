@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+
+## Version 1.2.0 - TBD
+
+### Removed
+- Removed notebook configuration `getTextCells()`
+
+
 ## Version 1.1.0 - 2023-06-21
 
 ### Fixed
