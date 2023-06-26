@@ -2,9 +2,8 @@ name: Build & Deploy
 
 on:
   # Runs on pushes targeting the default branch
-  #push:
-    #branches: ["main"]
-    #paths: ["docs/**", ".github/workflows/docs.yaml"]
+  push:
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,14 +34,15 @@ jobs:
           node-version: 18.x
           cache: 'npm'
       - run: npm ci
-      - run: npm run docs:build
+      - run: npm run compile
+      - run: npm run docs
         env:
           GH_BASE: /
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
-          path: docs/.vitepress/dist
+          path: docs
 
   # Deployment job
   deploy:
