@@ -5,9 +5,9 @@ import { NotebookCell, NotebookOptions } from './types';
 
 export default function (dom: any, config: NotebookOptions) {
   const nodeIsIgnored = (node: AnyNode) => config?.nodeIsIgnored ? config.nodeIsIgnored(node) : false;
-  const replaceNode = (node: Element) => config?.replaceNode ? config.replaceNode(node) : false;
   const nodeIsCode = (node: Element) => config?.nodeIsCode ? config.nodeIsCode(node) : node?.tagName === 'code';
   const getCodeCells = (node: AnyNode) => config?.getCodeCells ? config.getCodeCells(node) : [{ text: getCodeText(<DataNode>node), isCode: true }];
+
   const root = config?.getRootNode ? config.getRootNode(dom) : dom;
   const nodeStack = root.children;
 
@@ -19,10 +19,9 @@ export default function (dom: any, config: NotebookOptions) {
     let node = nodeStack.pop();
 
     if (config?.replaceNode) {
-      const nodeParent = { ...node.parent };
-      const nodeReplaced = replaceNode(node);
-      if (nodeParent === nodeReplaced.parent) {
-        node = { ...nodeReplaced };
+      const nodeReplace = config?.replaceNode(node);
+      if (node.parent === nodeReplace.parent) {
+        DomUtils.replaceElement(node, nodeReplace);
       } else {
         throw new Error("Node and replaced node parents must be the same! Ensure they are the same for the algorithm will not work.")
       }

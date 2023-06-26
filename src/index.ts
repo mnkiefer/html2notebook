@@ -44,20 +44,20 @@ export function html2cells(input: HtmlInput, config: NotebookOptions ): Notebook
  */
 export function cells2notebook(config: NotebookOptions, cells: NotebookCell[]) {
   let notebook;
-  switch(config.type) {
+  switch(config?.type) {
     case "cap":
-      notebook = templates.cap(cells, config.styles);
+      notebook = templates.cap(cells, config?.styles);
       break;
     case "jupyter":
-      notebook = templates.jupyter(cells, config.styles);
+      notebook = templates.jupyter(cells, config?.styles);
       break;
     default:
-      notebook = templates.jupyter(cells, config.styles);
+      notebook = templates.jupyter(cells, config?.styles);
       break;
   }
-  if (config.outputFile) {
-    fs.writeFileSync(config.outputFile, JSON.stringify(notebook, null, 4), 'utf8');
-    console.log(`> Notebook written to file "${config.outputFile}"`);
+  if (config?.outputFile) {
+    fs.writeFileSync(config?.outputFile, JSON.stringify(notebook, null, 4), 'utf8');
+    console.log(`> Notebook written to file "${config?.outputFile}"`);
     return
   }
   return notebook;

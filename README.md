@@ -54,75 +54,44 @@ console.log(nb);
 
 This produces the following output:
 
-```ipynb
+```swift
 {
-    "metadata": {
-        "language_info": {
-            "name": "python"
-        },
-        "orig_nbformat": 4
+  metadata: { language_info: { name: 'python' }, orig_nbformat: 4 },
+  nbformat: 4,
+  nbformat_minor: 2,
+  cells: [
+    {
+      attachments: {},
+      metadata: {},
+      cell_type: 'markdown',
+      source: [Array]
     },
-    "nbformat": 4,
-    "nbformat_minor": 2,
-    "cells": [
-        {
-            "attachments": {},
-            "metadata": {},
-            "cell_type": "markdown",
-            "source": [
-                "<html>",
-                "<div class=\"n1\">",
-                "    <div class=\"n2\">TEXT N2",
-                "        <div class=\"n4\">",
-                "            <div class=\"n10\"></div>",
-                "        </div>",
-                "        </div></div></html>"
-            ]
-        },
-        {
-            "metadata": {},
-            "execution_count": null,
-            "outputs": [],
-            "cell_type": "code",
-            "source": [
-                "CODE N5",
-                "                "
-            ]
-        },
-        {
-            "attachments": {},
-            "metadata": {},
-            "cell_type": "markdown",
-            "source": [
-                "<html><div class=\"n1\"><div class=\"n2\">",
-                "        <div class=\"n6\">TEXT N6</div>",
-                "    </div>",
-                "    <div class=\"n3\">",
-                "        <div class=\"n7\"></div>",
-                "        <div class=\"n8\">TEXT N8</div>",
-                "        </div></div></html>"
-            ]
-        },
-        {
-            "metadata": {},
-            "execution_count": null,
-            "outputs": [],
-            "cell_type": "code",
-            "source": [
-                "CODE N9"
-            ]
-        },
-        {
-            "attachments": {},
-            "metadata": {},
-            "cell_type": "markdown",
-            "source": [
-                "<html><div class=\"n1\"><div class=\"n3\">",
-                "    </div>",
-                "</div>",
-                "</html>"
-            ]
-        }
-    ]
+    {
+      metadata: {},
+      execution_count: null,
+      outputs: [],
+      cell_type: 'code',
+      source: [Array]
+    },
+    {
+      attachments: {},
+      metadata: {},
+      cell_type: 'markdown',
+      source: [Array]
+    },
+    {
+      metadata: {},
+      execution_count: null,
+      outputs: [],
+      cell_type: 'code',
+      source: [Array]
+    },
+    {
+      attachments: {},
+      metadata: {},
+      cell_type: 'markdown',
+      source: [Array]
+    }
+  ]
 }
 ```
