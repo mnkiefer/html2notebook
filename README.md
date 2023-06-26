@@ -126,5 +126,3 @@ This produces the following output:
     ]
 }
 ```
-
-Please visit the [html2notebook documentation](https://mnkiefer.github.io/html2notebook/) for a complete list of all functions and configuration options available for further customization.
