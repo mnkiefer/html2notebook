@@ -15,4 +15,7 @@ npm install html2notebook
 
 ## Usage
 
+The simple function is [`html2notebook`](../functions/html2notebook.html#html2notebook)
+
+
 Please visit the [html2notebook documentation](https://mnkiefer.github.io/html2notebook/) for usage and examples.
