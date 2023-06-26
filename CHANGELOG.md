@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## Version 1.2.0 - 2023-06-26
 
 ### Added
-- Added notebook configuration option `editNode()`
+- Added notebook configuration option `replaceNode()`
 
 ### Removed
 - Removed notebook configuration option `getTextCells()`
