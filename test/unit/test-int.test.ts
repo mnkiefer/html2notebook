@@ -19,7 +19,9 @@ describe('Testing templates', () => {
     expect(() => {
       getCells(dom, {
         replaceNode: (node: any) => {
-          if (node?.attribs?.class === "child") node.parent = null;
+          if (node?.attribs?.class === "child") {
+            return { ...node, parent: null }
+          }
           return node;
         }
       })

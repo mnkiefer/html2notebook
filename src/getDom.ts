@@ -9,11 +9,14 @@ export default (input: HtmlInput): Document => {
   if (!input) {
     throw new Error('Missing input: Please provide a filePath, html string or a dom.');
   }
-  if (typeof input === "string" && fs.statSync(input).isFile()) {
-    const html = fs.readFileSync(input, 'utf8')
-    dom = parseDocument(html);
-  } else if (typeof input === "string") {
-    dom = parseDocument(input);
+  if (typeof input === "string") {
+    try {
+      fs.statSync(input)?.isFile()
+      const html = fs.readFileSync(input, 'utf8')
+      dom = parseDocument(html);
+    } catch (err) {
+      dom = parseDocument(input);
+    }
   } else if (input.hasOwnProperty('children')) {
     dom = <Document>input;
   } else {
