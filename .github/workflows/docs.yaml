@@ -34,6 +34,7 @@ jobs:
           node-version: 18.x
           cache: 'npm'
       - run: npm ci
+      - run: npm run compile
       - run: npm run docs
         env:
           GH_BASE: /
