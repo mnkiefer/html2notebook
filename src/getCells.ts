@@ -19,9 +19,9 @@ export default function (dom: any, config: NotebookOptions) {
     let node = nodeStack.pop();
 
     if (config?.replaceNode) {
-      const nodeParent = { ...node.parent };
-      const nodeReplaced = replaceNode(node);
-      if (nodeParent === nodeReplaced.parent) {
+      // Pass a copy of the node
+      const nodeReplaced = replaceNode({ ...node});
+      if (node.parent === nodeReplaced.parent) {
         node = { ...nodeReplaced };
       } else {
         throw new Error("Node and replaced node parents must be the same! Ensure they are the same for the algorithm will not work.")
