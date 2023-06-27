@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "outDir": "./lib",
+      "allowJs": true,
+      "strict": true,
+      "target": "es5",
+      "exactOptionalPropertyTypes": true,
+      "forceConsistentCasingInFileNames": true,
+      "isolatedModules": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitOverride": true,
+      "noImplicitReturns": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "esModuleInterop": true
+    },
+    "include": ["./src/**/*"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types/index.d.ts"
+    ]
+  }
