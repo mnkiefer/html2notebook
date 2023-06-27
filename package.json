@@ -1,6 +1,6 @@
 {
   "name": "html2notebook",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Mara Nikola Kiefer",
   "license": "MIT",
   "description": "Convert static HTML files to notebooks",
@@ -12,6 +12,10 @@
     "LICENSE"
   ],
   "types": "lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mnkiefer/html2notebook"
+  },
   "dependencies": {
     "htmlparser2": "^9.0.0"
   },
@@ -29,7 +33,7 @@
   "scripts": {
     "compile": "tsc -p ./",
     "watch": "tsc -p ./ --watch",
-    "test": "jest",
+    "test": "npm run compile && jest",
     "lint": "eslint",
     "docs": "npx typedoc --entryPoints src/index.ts --out docs"
   }
