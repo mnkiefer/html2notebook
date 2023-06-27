@@ -21,12 +21,7 @@ jobs:
         with:
             node-version: ${{ matrix.version }}
 
-      - name: Run Unit Tests
+      - name: Run Tests
         run: |
           npm install
           npm run test
-
-      - name: Run Integration Tests
-        run: |
-          npm install
-          npm run test:int
