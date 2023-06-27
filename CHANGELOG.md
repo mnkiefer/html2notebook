@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
-## Version 1.2.0 - 2023-06-26
+## Version 1.2.0 - 2023-06-27
 
 ### Added
 - Added notebook configuration option `replaceNode()`
