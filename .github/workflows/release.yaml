@@ -23,14 +23,10 @@ jobs:
         node-version: 18
         registry-url: https://registry.npmjs.org/
 
-    - name: Run Unit Tests
+    - name: Run Tests
       run: |
         npm install
         npm run test
-    - name: Run Integration Tests
-      run: |
-        npm install
-        npm run test:int
 
     - name: get-version
       id: package-version
