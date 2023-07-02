@@ -20,13 +20,11 @@ Let's consider we have the following file _test.html_ as input:
 ```html
 <html>
   <div class="n1">
-    <div class="n2">
-      TEXT N2
+    <div class="n2">TEXT N2
       <div class="n4">
         <div class="n10"></div>
       </div>
-      <code class="n5"
-        >CODE N5
+      <code class="n5">CODE N5
         <div class="n11">TEXT N11</div>
         <div class="n12"></div>
       </code>
