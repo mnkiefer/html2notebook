@@ -7,6 +7,12 @@ on:
       branches: [main]
     workflow_dispatch:
 
+# Add unnecessary permissions to test monitoring action
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
     test:
       strategy:
